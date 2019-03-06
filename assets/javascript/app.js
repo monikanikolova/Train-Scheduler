@@ -17,7 +17,7 @@ var config = {
   var trainName = "";
   var destination = "";
   var frequency = 0;
-  var firstTrain = 0;
+  var firstTrain = "";
     // Capture Button Click
     $("#add-train").on("click", function(event) {
       // Don't refresh the page!
@@ -49,10 +49,13 @@ var config = {
         console.log("child" + childFirstTrain);
         
         
-        var firstTrainConverted = moment(childFirstTrain).format("hh:mm");
+        var firstTrainConverted = moment(childFirstTrain, "HH:mm").subtract(1, "years");
         console.log(firstTrainConverted);
       
         var currentTime = moment();
+        console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+        
+
         // var convertedTime = moment().unix(childFirstTrain).format("hh:mm");
         var differenceTime = moment().diff(moment(firstTrainConverted), "minutes");
         var reminder = differenceTime % childFrequency;
@@ -63,5 +66,6 @@ var config = {
 
 
 
-        $("#schedule > tbody").append("<tr><td>" + childName + "</tr><td>" + childDestination + "</tr><td>" + "Every " + childFrequency + " mins" + "</tr><td>" + nextTrainConverted + "</tr><td>" + minutesUnillNext + " minutes until arrival" + "</td>")
+
+        $("#schedule > tbody").append("<tr><td>" + childName + "</td>" + "<td>" + childDestination + "</td>" + "<td>" + "Every " + childFrequency + " mins" + "</td>" + "<td>" + nextTrainConverted + "</td>" + "<td>" + minutesUnillNext + " minutes until arrival" + "</tr></td>")
       });
