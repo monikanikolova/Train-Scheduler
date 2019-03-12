@@ -1,12 +1,5 @@
-var config = {
-    apiKey: "AIzaSyACWWjBYI0DlHVPB7y9qkYxQ0VGEltvtQs",
-    authDomain: "awesomefire-7ccfb.firebaseapp.com",
-    databaseURL: "https://awesomefire-7ccfb.firebaseio.com",
-    projectId: "awesomefire-7ccfb",
-    storageBucket: "awesomefire-7ccfb.appspot.com",
-    messagingSenderId: "752955919743"
-  };
-  firebase.initializeApp(config);
+
+ 
 
     // Initialize Firebase
 
